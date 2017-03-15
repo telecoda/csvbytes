@@ -12,6 +12,10 @@ The difference is that this implementation returns a slice of bytes to reduce al
 Please handle the byte slice with care as its contents will be destroyed by the next read.
 
 
+## installation
+
+    $ go get github.com/telecoda/csvbytes
+
 ## running tests
     
     $ go test ./... -bench=. -v
