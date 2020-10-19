@@ -7,8 +7,6 @@ import (
 	"fmt"
 	"io"
 	"unicode"
-
-	"github.com/unravelin/core/arx/log"
 )
 
 // This is a copy of the csv parser from the std lib, except it returns fields as [][]byte rather than []string
@@ -218,7 +216,7 @@ func (r *Reader) parseRecord() ([][]byte, error) {
 	maxFields := len(r.fields)
 	for i, idx := range r.fieldIndexes {
 		if i > maxFields {
-			log.Warnf("Too many fields in this row: %s", r.lineBuffer.String())
+			fmt.Sprintf("Too many fields in this row: %s", r.lineBuffer.String())
 			break
 		}
 		if i == fieldCount-1 {
